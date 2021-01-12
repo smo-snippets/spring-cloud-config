@@ -1,0 +1,3 @@
+[submodule "spring-cloud-git-config"]
+	path = spring-cloud-git-config
+	url = https://github.com/smo-snippets/spring-cloud-git-config.git
