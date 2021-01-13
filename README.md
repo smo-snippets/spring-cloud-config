@@ -8,3 +8,8 @@ git submodule update --init --recursive
 - Currency-Exchange-Service runs on a H2 in memory database
 - 
 - Feign -> Invoke other  via feignclient
+- Ribbon -> Load Balancing
+
+
+TODO
+Tests WebMvc

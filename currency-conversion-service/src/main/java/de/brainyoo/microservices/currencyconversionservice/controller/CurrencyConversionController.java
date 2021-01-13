@@ -27,7 +27,7 @@ public class CurrencyConversionController {
 				"http://localhost:8000/currency-exchange/from/{from}/to/{to}", CurrencyConversionBean.class, vars);
 		CurrencyConversionBean body = response.getBody();
 		return new CurrencyConversionBean(body.getId(), from, to, body.getConversionMultiple(), quantity,
-				quantity.multiply(body.getConversionMultiple()));
+				quantity.multiply(body.getConversionMultiple()), body.getPort());
 	}
 
 	@GetMapping("/currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}")
@@ -36,6 +36,6 @@ public class CurrencyConversionController {
 
 		CurrencyConversionBean body = exchangeProxy.retrieveExchangeValue(from, to);
 		return new CurrencyConversionBean(body.getId(), from, to, body.getConversionMultiple(), quantity,
-				quantity.multiply(body.getConversionMultiple()));
+				quantity.multiply(body.getConversionMultiple()), body.getPort());
 	}
 }
